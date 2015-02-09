@@ -42,7 +42,7 @@ sumData <- sumData %>%
   summarise(steps=sum(steps))
 
 # Make a line plot
-ggplot(sumData,aes(x=date,y=steps)) + geom_bar(stat="identity") + labs(x="Date",y="Steps Taken")
+ggplot(sumData,aes(x=steps)) + geom_histogram()
 ```
 
 2. Calculate and report the mean and median total number of steps taken per day
@@ -126,7 +126,7 @@ histData <- histData %>%
   group_by(date) %>%
   summarise(totalSteps = sum(computedSteps))
 
-ggplot(histData,  aes(x=date, y=totalSteps) ) + geom_bar(stat="identity") + labs(y="Observed or Computed Steps Taken",x="Date")
+ggplot(histData,  aes(x=totalSteps) ) + geom_histogram() + labs(y="Observed or Computed Steps Taken",x="Date")
 ```
 
 b. Compute the mean and median of the "filled" data set

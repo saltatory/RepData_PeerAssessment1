@@ -56,7 +56,11 @@ sumData <- sumData %>%
   summarise(steps=sum(steps))
 
 # Make a line plot
-ggplot(sumData,aes(x=date,y=steps)) + geom_bar(stat="identity") + labs(x="Date",y="Steps Taken")
+ggplot(sumData,aes(x=steps)) + geom_histogram()
+```
+
+```
+## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-3-1.png) 
@@ -175,7 +179,11 @@ histData <- histData %>%
   group_by(date) %>%
   summarise(totalSteps = sum(computedSteps))
 
-ggplot(histData,  aes(x=date, y=totalSteps) ) + geom_bar(stat="identity") + labs(y="Observed or Computed Steps Taken",x="Date")
+ggplot(histData,  aes(x=totalSteps) ) + geom_histogram() + labs(y="Observed or Computed Steps Taken",x="Date")
+```
+
+```
+## stat_bin: binwidth defaulted to range/30. Use 'binwidth = x' to adjust this.
 ```
 
 ![](PA1_template_files/figure-html/unnamed-chunk-10-1.png) 
