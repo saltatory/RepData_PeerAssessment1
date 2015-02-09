@@ -56,7 +56,7 @@ sumData <- sumData %>%
   summarise(steps=sum(steps))
 
 # Make a line plot
-ggplot(sumData,aes(x=steps)) + geom_histogram()
+ggplot(sumData,aes(x=steps)) + geom_histogram() + labs(y="Count",x="Steps Taken in a Day")
 ```
 
 ```
@@ -179,7 +179,7 @@ histData <- histData %>%
   group_by(date) %>%
   summarise(totalSteps = sum(computedSteps))
 
-ggplot(histData,  aes(x=totalSteps) ) + geom_histogram() + labs(y="Observed or Computed Steps Taken",x="Date")
+ggplot(histData,  aes(x=totalSteps) ) + geom_histogram() + labs(y="Count",x="Steps Taken in a Day")
 ```
 
 ```
